@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños 🎂</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .pantalla-inicio {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .pantalla-inicio h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        .pantalla-inicio p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            background: white;
+            color: #ff4f70;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: .3s;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            transform: scale(1.08);
+        }
+
+        .carta {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .header {
+            background: #ff6b81;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .header h2 {
+            font-size: 2.5rem;
+        }
+
+        .foto-principal {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .contenido {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contenido p {
+            margin-bottom: 18px;
+            line-height: 1.9;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .firma {
+            margin-top: 25px;
+            font-size: 24px;
+            color: #ff4f70;
+            font-weight: bold;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .galeria img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: .4s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .sorpresa {
+            text-align: center;
+            padding: 40px;
+        }
+
+        #mensajeOculto {
+            display: none;
+            margin-top: 20px;
+            color: #ff4f70;
+            font-size: 22px;
+            font-weight: bold;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .globos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .globo {
+            position: absolute;
+            bottom: -100px;
+            font-size: 40px;
+            opacity: 0.8;
+            animation: subir linear infinite;
+        }
+
+        @keyframes subir {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-130vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="globos">
+        <div class="globo" style="left:5%; animation-duration:10s;">🎈</div>
+        <div class="globo" style="left:15%; animation-duration:15s;">🎈</div>
+        <div class="globo" style="left:25%; animation-duration:12s;">🎈</div>
+        <div class="globo" style="left:35%; animation-duration:18s;">🎈</div>
+        <div class="globo" style="left:45%; animation-duration:11s;">🎈</div>
+        <div class="globo" style="left:55%; animation-duration:16s;">🎈</div>
+        <div class="globo" style="left:65%; animation-duration:13s;">🎈</div>
+        <div class="globo" style="left:75%; animation-duration:17s;">🎈</div>
+        <div class="globo" style="left:85%; animation-duration:12s;">🎈</div>
+        <div class="globo" style="left:95%; animation-duration:14s;">🎈</div>
+
+        <div class="globo" style="left:10%;animation-duration:12s;">❤️</div>
+        <div class="globo" style="left:25%;animation-duration:15s;">🎈</div>
+        <div class="globo" style="left:40%;animation-duration:11s;">✨</div>
+        <div class="globo" style="left:55%;animation-duration:18s;">🎂</div>
+        <div class="globo" style="left:70%;animation-duration:13s;">🎁</div>
+        <div class="globo" style="left:85%;animation-duration:16s;">🌹</div>
+    </div>
+
+    <div class="pantalla-inicio" id="inicio">
+        <h1>🎂 Feliz Cumpleaños Eli 🎂</h1>
+        <p>Tengo un pequeño regalo para ti ❤️</p>
+
+        <button class="boton" onclick="abrirCarta()">
+            💌 Abrir mi regalo
+        </button>
+    </div>
+
+    <audio id="musica" loop>
+        <source src="LAS MAÑANITAS - Vicente Fernández (LETRA).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="carta" id="carta">
+
+        <div class="header">
+            <h2>Para una persona muy especial ❤️</h2>
+        </div>
+
+        <!-- FOTO PRINCIPAL -->
+        <img src="Imagen_principal.jpeg" class="foto-principal">
+
+        <div class="contenido">
+
+            <p>
+                🎂 Hoy no es un día cualquiera. Hoy celebramos el día en que llegó al mundo una persona maravillosa,
+                alguien que con su forma de ser ha dejado una huella muy especial en mi vida.
+            </p>
+
+            <p>
+                Quiero agradecerle a Dios por regalarte un año más de vida, por permitirte seguir compartiendo tu luz,
+                tu alegría y ese corazón tan hermoso que tienes. Estoy seguro de que muchas personas son felices porque
+                existes, y yo tengo la fortuna de ser una de ellas.
+            </p>
+
+            <p>
+                Admiro profundamente la mujer que eres. Tu fortaleza, tu dedicación y la manera en que enfrentas cada
+                reto de la vida son cualidades que me inspiran todos los días. Pero si hay algo que me llena aún más de
+                admiración, es verte desempeñar el papel de madre.
+            </p>
+
+            <p>
+                Eres una madre extraordinaria, amorosa, luchadora y capaz de dar todo por quienes amas. La paciencia, el
+                cariño y la entrega con los que cuidas a tu hijo hablan de la gran persona que eres. No cualquiera tiene
+                la capacidad de amar de esa manera tan genuina y tan pura.
+            </p>
+
+            <p>
+                Hoy quiero que recuerdes lo valiosa que eres, no solo como mujer, sino también como madre, amiga,
+                compañera y ser humano. A veces la vida puede ser complicada y las responsabilidades pueden ser muchas,
+                pero nunca olvides que eres una persona increíble y que mereces toda la felicidad del mundo.
+            </p>
+
+            <p>
+                Me siento verdaderamente afortunado de tener a una enamorada como tú. Gracias por cada momento
+                compartido, por cada conversación, por cada sonrisa y por todos esos pequeños detalles que hacen que los
+                días sean mejores. Gracias por permitirme conocerte y por formar parte de tu vida.
+            </p>
+
+            <p>
+                Deseo de todo corazón que este nuevo año llegue cargado de bendiciones, salud, tranquilidad, éxitos y
+                muchos sueños cumplidos. Que nunca te falten razones para sonreír, ni personas que te recuerden lo
+                especial que eres.
+            </p>
+
+            <p>
+                Hoy celebra mucho, disfruta cada instante y recibe todo el cariño que mereces. Porque si hay alguien que
+                merece ser feliz y sentirse querida en un día como hoy, esa eres tú.
+            </p>
+
+            <p>
+                Feliz cumpleaños, mi amor. ❤️ Gracias por existir y por ser exactamente la maravillosa persona que eres.
+            </p>
+
+            <div class="firma">
+                ❤️ Con todo mi cariño,<br>
+                Brandom ❤️
+            </div>
+
+        </div>
+        <div class="galeria">
+            <img src="foto1.jpg">
+            <img src="foto2.jpeg">
+            <img src="foto3.jpeg">
+        </div>
+
+        <div class="sorpresa">
+
+            <button class="boton" onclick="mostrarSorpresa()">
+                🎁 Abrir sorpresa
+            </button>
+
+            <div id="mensajeOculto">
+                ✨ Que este sea uno de muchos cumpleaños hermosos,
+                llenos de alegría, sueños cumplidos y momentos inolvidables.
+                Nunca dejes de brillar. TE AMO!! FELIZ VUELTA AL SOL AMOR DE MI VIDA!! ❤️🎂🎈
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function abrirCarta() {
+
+            document.getElementById("inicio").style.display = "none";
+
+            document.getElementById("carta").style.display = "block";
+
+            document.getElementById("musica").play()
+                .catch(error => {
+                    console.log("El navegador bloqueó la reproducción automática.");
+                });
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function mostrarSorpresa() {
+            document.getElementById("mensajeOculto").style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>
