@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños 🎂</title>
+
+    <title>Un pequeño detalle 🌻</title>
 
     <style>
         * {
@@ -15,7 +16,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            background: linear-gradient(135deg, #fff8d6, #ffd86b);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -27,14 +28,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            color: #5f4a00;
             padding: 20px;
         }
 
         .pantalla-inicio h1 {
             font-size: 4rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, .12);
         }
 
         .pantalla-inicio p {
@@ -44,7 +45,7 @@
 
         .boton {
             background: white;
-            color: #ff4f70;
+            color: #c28a00;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
@@ -52,6 +53,7 @@
             cursor: pointer;
             transition: .3s;
             font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .12);
         }
 
         .boton:hover {
@@ -65,13 +67,13 @@
             background: white;
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
             animation: fadeIn 1.5s ease;
         }
 
         .header {
-            background: #ff6b81;
-            color: white;
+            background: #f4c430;
+            color: #4f3d00;
             text-align: center;
             padding: 30px;
         }
@@ -99,9 +101,9 @@
         }
 
         .firma {
-            margin-top: 25px;
-            font-size: 24px;
-            color: #ff4f70;
+            margin-top: 30px;
+            font-size: 22px;
+            color: #c28a00;
             font-weight: bold;
         }
 
@@ -132,10 +134,11 @@
 
         #mensajeOculto {
             display: none;
-            margin-top: 20px;
-            color: #ff4f70;
-            font-size: 22px;
+            margin-top: 25px;
+            color: #8a6500;
+            font-size: 21px;
             font-weight: bold;
+            line-height: 1.7;
             animation: fadeIn 1s ease;
         }
 
@@ -185,121 +188,131 @@
 <body>
 
     <div class="globos">
-        <div class="globo" style="left:5%; animation-duration:10s;">🎈</div>
-        <div class="globo" style="left:15%; animation-duration:15s;">🎈</div>
-        <div class="globo" style="left:25%; animation-duration:12s;">🎈</div>
-        <div class="globo" style="left:35%; animation-duration:18s;">🎈</div>
-        <div class="globo" style="left:45%; animation-duration:11s;">🎈</div>
-        <div class="globo" style="left:55%; animation-duration:16s;">🎈</div>
-        <div class="globo" style="left:65%; animation-duration:13s;">🎈</div>
-        <div class="globo" style="left:75%; animation-duration:17s;">🎈</div>
-        <div class="globo" style="left:85%; animation-duration:12s;">🎈</div>
-        <div class="globo" style="left:95%; animation-duration:14s;">🎈</div>
 
-        <div class="globo" style="left:10%;animation-duration:12s;">❤️</div>
-        <div class="globo" style="left:25%;animation-duration:15s;">🎈</div>
-        <div class="globo" style="left:40%;animation-duration:11s;">✨</div>
-        <div class="globo" style="left:55%;animation-duration:18s;">🎂</div>
-        <div class="globo" style="left:70%;animation-duration:13s;">🎁</div>
-        <div class="globo" style="left:85%;animation-duration:16s;">🌹</div>
+        <div class="globo" style="left:5%; animation-duration:10s;">🌻</div>
+        <div class="globo" style="left:15%; animation-duration:15s;">✨</div>
+        <div class="globo" style="left:25%; animation-duration:12s;">🌻</div>
+        <div class="globo" style="left:35%; animation-duration:18s;">⭐</div>
+        <div class="globo" style="left:45%; animation-duration:11s;">🌻</div>
+        <div class="globo" style="left:55%; animation-duration:16s;">✨</div>
+        <div class="globo" style="left:65%; animation-duration:13s;">🌻</div>
+        <div class="globo" style="left:75%; animation-duration:17s;">⭐</div>
+        <div class="globo" style="left:85%; animation-duration:12s;">🌻</div>
+        <div class="globo" style="left:95%; animation-duration:14s;">✨</div>
+
     </div>
 
     <div class="pantalla-inicio" id="inicio">
-        <h1>🎂 Feliz Cumpleaños Eli 🎂</h1>
-        <p>Tengo un pequeño regalo para ti ❤️</p>
+
+        <h1>🌻 Un pequeño detalle 🌻</h1>
+
+        <p>
+            Porque hay personas que conoces hace poco,
+            pero dejan una buena impresión desde el primer momento.
+        </p>
 
         <button class="boton" onclick="abrirCarta()">
-            💌 Abrir mi regalo
+            💌 Abrir detalle
         </button>
+
     </div>
 
     <audio id="musica" loop>
-        <source src="LAS MAÑANITAS - Vicente Fernández (LETRA).mp3" type="audio/mpeg">
+        <source src="Alejandro Roca Rey - Solo Pensando En Ti (Nicole Favre Remix) (Video Oficial).mp3" type="audio/mpeg">
     </audio>
 
     <div class="carta" id="carta">
 
         <div class="header">
-            <h2>Para una persona muy especial ❤️</h2>
+            <h2>🌻 Para una buena amiga 🌻</h2>
         </div>
 
-        <!-- FOTO PRINCIPAL -->
         <img src="Imagen_principal.jpeg" class="foto-principal">
 
         <div class="contenido">
 
             <p>
-                🎂 Hoy no es un día cualquiera. Hoy celebramos el día en que llegó al mundo una persona maravillosa,
-                alguien que con su forma de ser ha dejado una huella muy especial en mi vida.
+                Hay personas que uno conoce de casualidad y, sin esperarlo,
+                terminan haciendo que un momento cualquiera se convierta
+                en un recuerdo memorable.
             </p>
 
             <p>
-                Quiero agradecerle a Dios por regalarte un año más de vida, por permitirte seguir compartiendo tu luz,
-                tu alegría y ese corazón tan hermoso que tienes. Estoy seguro de que muchas personas son felices porque
-                existes, y yo tengo la fortuna de ser una de ellas.
+                Nos conocemos hace poquito, pero quería tener este pequeño
+                detalle contigo porque me caíste muy bien desde que empezamos
+                a conversar.
             </p>
 
             <p>
-                Admiro profundamente la mujer que eres. Tu fortaleza, tu dedicación y la manera en que enfrentas cada
-                reto de la vida son cualidades que me inspiran todos los días. Pero si hay algo que me llena aún más de
-                admiración, es verte desempeñar el papel de madre.
+                Y después del sábado, creo que quedó más que claro que
+                podemos pasarla muy bien. 😄
+                La verdad, me divertí bastante y fue genial
+                compartir ese momento contigo.
             </p>
 
             <p>
-                Eres una madre extraordinaria, amorosa, luchadora y capaz de dar todo por quienes amas. La paciencia, el
-                cariño y la entrega con los que cuidas a tu hijo hablan de la gran persona que eres. No cualquiera tiene
-                la capacidad de amar de esa manera tan genuina y tan pura.
+                Por eso estos girasoles son simplemente un pequeño detalle,
+                para sacarte una sonrisa y porque sentí que iban muy bien
+                con tu personalidad: alegres, espontáneos y con buena vibra.
             </p>
 
             <p>
-                Hoy quiero que recuerdes lo valiosa que eres, no solo como mujer, sino también como madre, amiga,
-                compañera y ser humano. A veces la vida puede ser complicada y las responsabilidades pueden ser muchas,
-                pero nunca olvides que eres una persona increíble y que mereces toda la felicidad del mundo.
+                No hace falta conocerse de años para reconocer cuando
+                alguien tiene una personalidad que cae bien.
+                Y tú definitivamente me dejaste esa impresión.
             </p>
 
             <p>
-                Me siento verdaderamente afortunado de tener a una enamorada como tú. Gracias por cada momento
-                compartido, por cada conversación, por cada sonrisa y por todos esos pequeños detalles que hacen que los
-                días sean mejores. Gracias por permitirme conocerte y por formar parte de tu vida.
+                Espero que sigamos compartiendo buenos momentos,
+                más conversaciones, más salidas y, sobre todo,
+                muchas risas de esas que hacen que uno diga:
+                "qué buena noche". 😄
             </p>
 
             <p>
-                Deseo de todo corazón que este nuevo año llegue cargado de bendiciones, salud, tranquilidad, éxitos y
-                muchos sueños cumplidos. Que nunca te falten razones para sonreír, ni personas que te recuerden lo
-                especial que eres.
+                Así que este detalle es simplemente para ti,
+                sin muchas vueltas, pero con mucho gusto.
+                Gracias por la buena onda y por hacer que este sábado
+                haya sido un momento para recordar.
             </p>
 
             <p>
-                Hoy celebra mucho, disfruta cada instante y recibe todo el cariño que mereces. Porque si hay alguien que
-                merece ser feliz y sentirse querida en un día como hoy, esa eres tú.
-            </p>
-
-            <p>
-                Feliz cumpleaños, mi amor. ❤️ Gracias por existir y por ser exactamente la maravillosa persona que eres.
+                Que nunca te falten motivos para sonreír,
+                personas con buena energía a tu alrededor
+                y momentos que valga la pena recordar.
             </p>
 
             <div class="firma">
-                ❤️ Con todo mi cariño,<br>
-                Brandom ❤️
+                🌻 Con buena vibra,<br>
+                Brandom
             </div>
 
         </div>
+
         <div class="galeria">
+
             <img src="foto1.jpg">
             <img src="foto2.jpeg">
             <img src="foto3.jpeg">
+
         </div>
 
         <div class="sorpresa">
 
             <button class="boton" onclick="mostrarSorpresa()">
-                🎁 Abrir sorpresa
+                🌻 Abrir último detalle
             </button>
 
             <div id="mensajeOculto">
-                ✨ Que este sea uno de muchos cumpleaños hermosos,
-                llenos de alegría, sueños cumplidos y momentos inolvidables.
-                Nunca dejes de brillar. TE AMO!! FELIZ VUELTA AL SOL AMOR DE MI VIDA!! ❤️🎂🎈
+
+                🌻 Un pequeño detalle<br><br>
+
+                Gracias por la buena onda,
+                por las risas y por ese sábado tan divertido. 😄<br><br>
+
+                Espero que sea el primero de muchos buenos momentos.
+                ¡Que sigan las buenas salidas y las mejores historias! ✨
+
             </div>
 
         </div>
@@ -326,7 +339,9 @@
         }
 
         function mostrarSorpresa() {
+
             document.getElementById("mensajeOculto").style.display = "block";
+
         }
 
     </script>
